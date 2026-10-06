@@ -55,9 +55,22 @@
     foreach($bolasSacadas as $bolaActual){
         echo "La bola que ha salido es: $bolaActual<br>";
 
-        // Recorremos los cortanos del jugador para tachar número
+        // Recorremos los cortanos del jugador para tachar número (Para llegar al valor = 3 bucles)
+        foreach($jugador1 as $nombreCarton => $carton){
+            foreach($carton as $numeroFila => $fila){
+                foreach($fila as $numeroColumna => $valor){
+                    //Si coincide bola con valor carton ponemos a null
+                    if($valor == $bolaActual){
+                        $jugador1[$nombreCarton][$numeroFila][$numeroColumna] = null;
+                    }
+
+                }
+            }
+        }
 
     }
+
+    // Comprobamos si carton ha terminado o no
 
 
     ?>
