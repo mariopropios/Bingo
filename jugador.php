@@ -49,36 +49,6 @@
     shuffle($numeros);
     $jugador1["carton1C"] = array_chunk($numeros, 7);
 
-    //Jugador 2
-
-    shuffle($numeros);
-    $jugador2["carton2A"] = array_chunk($numeros, 7);
-    shuffle($numeros);
-    $jugador2["carton2B"] = array_chunk($numeros, 7);
-    shuffle($numeros);
-    $jugador2["carton2C"] = array_chunk($numeros, 7);
-    shuffle($numeros);
-
-    //Jugador 3
-
-    shuffle($numeros);
-    $jugador3["carton3A"] = array_chunk($numeros, 7);
-    shuffle($numeros);
-    $jugador3["carton3B"] = array_chunk($numeros, 7);
-    shuffle($numeros);
-    $jugador3["carton3C"] = array_chunk($numeros, 7);
-    shuffle($numeros);
-
-    //Jugador 4
-
-    shuffle($numeros);
-    $jugador4["carton4A"] = array_chunk($numeros, 7);
-    shuffle($numeros);
-    $jugador4["carton4B"] = array_chunk($numeros, 7);
-    shuffle($numeros);
-    $jugador4["carton4C"] = array_chunk($numeros, 7);
-    shuffle($numeros);
-
     //Visualizamos un jugador
     var_dump($jugador1);
 
