@@ -49,7 +49,6 @@
     shuffle($numeros);
     $jugador1["carton1C"] = array_chunk($numeros, 7);
 
-    var_dump($jugador1);
     //Jugador 2
 
     shuffle($numeros);
