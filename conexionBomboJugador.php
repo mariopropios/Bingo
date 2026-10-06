@@ -71,8 +71,19 @@
     }
 
     // Comprobamos si carton ha terminado o no
+    $hayNumeros = false;
 
+    foreach ($jugador1 as $carton) {
+        foreach ($carton as $fila) {
+            foreach ($fila as $valor) {
+                if ($valor !== null) {
+                    $hayNumeros = true;
+                }
+            }
+        }
+    }
 
+    var_dump($jugador1);
     ?>
 </body>
 </html>
