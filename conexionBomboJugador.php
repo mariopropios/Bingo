@@ -47,38 +47,31 @@
     //var_dump($jugador1);
     
     //------ 3. LÓGICA DE JUEGO
-    $contador = 0;
-    $bolaActual;
+    $bingo = false;
 
-
-    // Recorremos el bombo bola a bola
-    foreach($bolasSacadas as $bolaActual){
+    foreach ($bolasSacadas as $bolaActual) {
         echo "La bola que ha salido es: $bolaActual<br>";
 
-        // Recorremos los cortanos del jugador para tachar número (Para llegar al valor = 3 bucles)
-        foreach($jugador1 as $nombreCarton => $carton){
-            foreach($carton as $numeroFila => $fila){
-                foreach($fila as $numeroColumna => $valor){
-                    //Si coincide bola con valor carton ponemos a null
-                    if($valor == $bolaActual){
-                        $jugador1[$nombreCarton][$numeroFila][$numeroColumna] = null;
-                    }
+        foreach ($jugador1 as $nombreCarton => $carton) {
+            $quedanNumeros = false;
 
+            foreach ($carton as $numeroFila => $fila) {
+                foreach ($fila as $numeroColumna => $valor) {
+                    if ($valor === $bolaActual) {
+                        // Tachamos el número
+                        $jugador1[$nombreCarton][$numeroFila][$numeroColumna] = null;
+                    } elseif ($valor !== null) {
+                        // Sigue habiendo algún número sin tachar
+                        $quedanNumeros = true;
+                    }
                 }
             }
-        }
 
-    }
-
-    // Comprobamos si carton ha terminado o no
-    $hayNumeros = false;
-
-    foreach ($jugador1 as $carton) {
-        foreach ($carton as $fila) {
-            foreach ($fila as $valor) {
-                if ($valor !== null) {
-                    $hayNumeros = true;
-                }
+            // Si no queda ninguno, este cartón ha hecho Bingo
+            if (!$quedanNumeros) {
+                echo "¡BINGO en $nombreCarton con la bola $bolaActual!<br>";
+                $bingo = true;
+                break 2;   // sale del bucle de cartones y del de bolas
             }
         }
     }
