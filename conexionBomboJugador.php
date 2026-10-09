@@ -69,7 +69,7 @@
 
             // Si no queda ninguno, este cartón ha hecho Bingo
             if (!$quedanNumeros) {
-                echo "¡BINGO en $nombreCarton con la bola $bolaActual!<br>";
+                echo "¡BINGO en $nombreCarton<br>";
                 $bingo = true;
                 break 2;   // sale del bucle de cartones y del de bolas
             }
