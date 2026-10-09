@@ -43,9 +43,11 @@
     shuffle($numeros);
     $jugador1["carton1C"] = array_chunk($numeros, 7);
 
-    echo "Cartones iniciales del Jugador 1:<br>";
+    //echo "Cartones iniciales del Jugador 1:<br>";
     //var_dump($jugador1);
-    
+
+    //Cartón original
+    $cartonOriginal = $jugador1;
     //------ 3. LÓGICA DE JUEGO
     $bingo = false;
 
@@ -75,7 +77,9 @@
             }
         }
     }
-
+    echo "CARTÓN ORIGINAL:<br>";
+    var_dump($cartonOriginal);
+    echo "JUGADOR 1:<br>";
     var_dump($jugador1);
     ?>
 </body>
